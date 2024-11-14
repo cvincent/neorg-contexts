@@ -144,8 +144,8 @@ module.private = {
         local col = vim.fn.getwininfo(vim.api.nvim_get_current_win())[1].textoff
         local lines = module.private.get_contexts()
         local width = vim.api.nvim_win_get_width(0) - col
-        if width < 0 then
-            width = 0
+        if width <= 0 then
+            width = 1
         end
         if #lines == 0 then
             if winnr and vim.api.nvim_win_is_valid(winnr) then
