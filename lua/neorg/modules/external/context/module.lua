@@ -153,7 +153,7 @@ module.private = {
         if not winnr or not vim.api.nvim_win_is_valid(winnr) then
             winnr = vim.api.nvim_open_win(bufnr, false, {
                 relative = "win",
-                width = vim.api.nvim_win_get_width(0) - col,
+                width = vim.api.nvim_win_get_width(1) - col,
                 height = #lines,
                 row = 0,
                 col = col,
@@ -165,7 +165,7 @@ module.private = {
             vim.api.nvim_win_set_config(winnr, {
                 win = vim.api.nvim_get_current_win(),
                 relative = "win",
-                width = vim.api.nvim_win_get_width(0) - col,
+                width = vim.api.nvim_win_get_width(1) - col,
                 height = #lines,
                 row = 0,
                 col = col,
